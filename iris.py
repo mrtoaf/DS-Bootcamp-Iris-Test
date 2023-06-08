@@ -1,4 +1,3 @@
-# IMPORTING LIBRARIES
 import numpy as np
 import pandas as pd
 from sklearn import datasets
@@ -10,6 +9,9 @@ def load_data():
     iris_dataframe = data.frame
     return iris_dataframe
 
+# 0 is Setosa
+# 1 is Versicolor
+# 2 is Virginica
 
 if __name__ == "__main__":
     df_data = load_data()
