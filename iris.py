@@ -10,8 +10,13 @@ def load_data():
     iris_dataframe = data.frame
     return iris_dataframe
 
-def split_data():
-    
+def split_data(dataframe):
+    x = dataframe.drop(['target'], axis=1)
+    x = x.to_numpy()[:, (2, 3)]
+    y = dataframe['target']
+
+    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.5, random_state=42)
+    return x_train, x_test, y_train, y_test
 
 # 0 is Setosa
 # 1 is Versicolor
@@ -19,6 +24,8 @@ def split_data():
 
 if __name__ == "__main__":
     df_data = load_data()
-    df_data.info()
+
+    x_train, x_test, y_train, y_test = split_data(df_data)
+
 
 
