@@ -11,3 +11,12 @@ from sklearn.discriminant_analysis import LinearDiscriminantAnalysis, QuadraticD
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.svm import SVC
 from sklearn.linear_model import LogisticRegression
+
+
+url = 'https://raw.githubusercontent.com/jbrownlee/Datasets/master/iris.csv'
+
+col_name = ['sepal-lenght','sepal-width','petal-lenght','petal-width','class']
+
+dataset = pd.read_csv(url, names = col_name)
+
+dataset.shape
